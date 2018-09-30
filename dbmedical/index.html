@@ -1,0 +1,55 @@
+<!DOCTYPE html> 
+<html> 
+  <head> 
+    <meta charset="utf-8"> 
+    <title>Vue.js</title> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  
+    
+    </head>
+    <body>
+       <div id = 'app'  font-family='Arial' style='color:#33aa33'>
+       	<br>
+       <h1 font-family='Arial' align="center" >{{message}}</h1>
+       </div>
+      <div id = control>
+      	<button>Create patients</button>
+      	<patient></patient>
+      	</div>
+
+
+
+
+    <script src="https://unpkg.com/vue"></script>
+	<script type="text/javascript" src = './dbs.js'></script>
+      <script>
+
+      var v = new Vue({
+      	el:'#app',
+       data:function(){
+        return{
+          message:'Database'
+       
+        }
+      }
+      	});
+      var patient = {
+      	template:`<div>{{name}} {{history}}</div>`,
+      	data:{
+      		    patient: Generate(),
+               name: this.patient.name,
+      		        history: patient.history
+      	}
+      };
+       var c = new Vue({
+      	el:'#control',
+       data:function(){
+        return{
+     message: "database"
+ 
+        }
+      }
+      	});
+  </script>
+    </body>
+    </html>
